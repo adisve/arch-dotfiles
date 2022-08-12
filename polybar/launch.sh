@@ -1,26 +1,14 @@
-#!/bin/bash
+
+#!/usr/bin/env sh
+
+CONFIG_LOCATION=/home/"$USER"/.config/polybar/config.ini
 
 # Terminate already running bar instances
 killall -q polybar
-# killall zscroll
 
 # Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+while pgrep -x polybar >/dev/null; do sleep 1; done
+# Launch
+polybar --reload "base" -q -c "$CONFIG_LOCATION" &
 
-# Launch all bars using the config location ~/.config/polybar/config.ini
-
-CONFIG_LOCATION=/home/"$USER"/.config/polybar/config.ini
-DISPLAY_PRIMARY=$(xrdb -query | grep 'display.primary'| awk '{print $NF}')
-
-for bar in "$HOME"/.config/polybar/bars/*
-do
-    bar=${bar##*/}
-    bar=${bar%%.*}
-    if [[ "$bar" == "i3-workspaces" ]]; then
-        MONITOR=$DISPLAY_PRIMARY polybar --reload "$bar" -q -c "$CONFIG_LOCATION"
-    else
-        polybar --reload "$bar" -q -c "$CONFIG_LOCATION" &
-    fi
-done
-
-echo "Polybar launched..."
+echo "Bar launched..."
