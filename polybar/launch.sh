@@ -1,10 +1,13 @@
 #!/usr/bin/env sh
 
 CONFIG_LOCATION=/home/"$USER"/.config/polybar/config.ini
-BAR=base
 killall -q polybar
 
-while pgrep -x polybar >/dev/null; do sleep 1; done
-polybar --reload "$BAR" -q -c "$CONFIG_LOCATION" &
+for bar in "$HOME"/.config/polybar/bars/*
+do
+    bar=${bar##*/}
+    bar=${bar%%.*}
+    MONITOR=$DISPLAY_PRIMARY polybar --reload "$bar" -q -c "$CONFIG_LOCATION" &
+done
 
 echo "Bar launched..."
