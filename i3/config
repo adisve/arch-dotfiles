@@ -105,7 +105,7 @@ bindsym $mod+a focus parent
 set $ws1 ""
 set $ws2 ""
 set $ws3 "ﭮ"
-set $ws4 ""
+set $ws4 ""
 set $ws5 ""
 set $ws6 ""
 set $ws7 ""
