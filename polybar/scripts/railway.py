@@ -45,7 +45,7 @@ debug_text = None
 def render():
 
     # Print km counter
-    print(f"Total km: {total_km:.2f} ", end="")
+    print(f"total km: {total_km:.2f} ", end="")
 
     global c
     # Compose world
