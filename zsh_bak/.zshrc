@@ -1,7 +1,7 @@
 #
 # ~/.zshrc
 #
-ZSH=/usr/share/oh-my-zsh/
+ZSH=$HOME/.oh-my-zsh/
 
 
 # If not running interactively, don't do anything
@@ -9,10 +9,10 @@ ZSH=/usr/share/oh-my-zsh/
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ ' 
 export PATH="$PATH:/home/adis/.local/bin"
-export PATH="$PATH:/home/adis/flutter_sdk/flutter/bin"
+export PATH="$PATH:/home/adis/.flutter/flutter/bin"
 export PATH=$PATH:$HOME/dotnet
 export DOTNET_ROOT=$HOME/dotnet
-export ZSH=/usr/share/oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export DEFAULT_USER="adis"
 EDITOR="nvim"
 VISUAL="nvim" 
@@ -82,3 +82,4 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
+motivate

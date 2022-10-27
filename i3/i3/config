@@ -15,7 +15,7 @@ font pango:firacode 10
 exec --no-startup-id "setxkbmap -layout se"
 
 #Set refresh rate
-exec --no-startup-id "xrandr --output DisplayPort-2 --mode 1920x1080 --rate 144"
+exec --no-startup-id "xrandr --output DP-3 --mode 1920x1080 --rate 144"
 
 exec --no-startup-id "xset s off"
 exec --no-startup-id "xset -dpms"
@@ -24,7 +24,7 @@ exec --no-startup-id "xset s noblank"
 
 exec --no-startup-id dex --autostart --environment i3
 
-exec --no-startup-id "feh --bg-fill ~/pictures/84291.png"
+exec --no-startup-id "feh --bg-fill ~/pictures/84291.jpg"
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
