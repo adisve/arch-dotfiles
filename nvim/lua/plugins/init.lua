@@ -1,4 +1,5 @@
 return require('packer').startup(function()
+	use { 'andweeb/presence.nvim' }
 	use {
   		'kyazdani42/nvim-tree.lua',
   		requires = {
